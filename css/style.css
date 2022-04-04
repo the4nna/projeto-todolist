@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-size: 16px;
+  background-color: #121212;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+}
+
+.toDoList {
+  width: 100%;
+  max-width: 600px;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+          box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.toDoList header {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 15px;
+  background-color: #de3f53;
+  color: #fff;
+  font-size: 1.3em;
+  text-align: center;
+  text-shadow: 1px 1px 1px #969696;
+}
+
+.toDoList .wrapper-list .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toDoList .wrapper-list .list li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background-color: #262e4c;
+  border-bottom: 1px solid #1c2340;
+  color: #b1b2c9;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+}
+
+
+.toDoList .wrapper-list .list li.removed {
+  animation: collapseItem 300ms ease;
+}
+
+.toDoList .wrapper-list .list li.hidden {
+  display: none;
+}
+
+.toDoList .wrapper-list .list li:hover {
+  background-color: #323b5c;
+}
+
+.toDoList .wrapper-list .list li:hover .remove {
+  opacity: 1;
+}
+
+.toDoList .wrapper-list .list li .check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  background-color: #404a6e;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+}
+
+.toDoList .wrapper-list .list li .check:hover {
+  background-color: #171d37;
+}
+
+.toDoList .wrapper-list ul.list .check:hover,
+.toDoList .wrapper-list ul.list .done .check {
+  background-color: #171d37;
+}
+
+.toDoList .wrapper-list ul.list .done .check:after {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.toDoList .wrapper-list ul.list .done .task {
+  text-decoration: line-through;
+}
+
+.toDoList .wrapper-list .list li .remove {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  background-color: red;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+}
+
+.toDoList .wrapper-list .list li .remove:after {
+  display: block;
+  content: 'x';
+  color: white;
+}
+
+.toDoList footer {
+  background-color: #171d37;
+}
+
+.toDoList footer input {
+  width: 90%;
+  padding: 20px;
+  background-color: #171d37;
+  border: none;
+  outline: none;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-size: 1.2em;
+  color: white;
+}
+
+@keyframes collapseItem {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
